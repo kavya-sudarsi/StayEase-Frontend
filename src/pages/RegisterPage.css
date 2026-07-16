@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+.register-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* LEFT */
+
+.register-left {
+  flex: 1.15;
+  background: linear-gradient(135deg,#7e22ce,#5b21b6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 70px;
+}
+
+.register-left::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  top:-120px;
+  left:-120px;
+}
+
+.register-left::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  right:-90px;
+  bottom:-90px;
+}
+
+.brand-content{
+  position:relative;
+  z-index:2;
+  max-width:520px;
+}
+
+.brand-logo{
+  font-size:62px;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.brand-tagline{
+  font-size:28px;
+  line-height:1.4;
+  margin-bottom:25px;
+}
+
+.brand-description{
+  font-size:18px;
+  line-height:1.8;
+  margin-bottom:45px;
+  opacity:.95;
+}
+
+.feature-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.feature-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:18px;
+}
+
+.feature-icon{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* RIGHT */
+
+.register-right{
+  flex:.85;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#fafafa;
+  padding:40px;
+}
+
+.register-card{
+  width:430px;
+  max-width:100%;
+  background:white;
+  border-radius:18px;
+  padding:45px;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.register-title{
+  font-size:34px;
+  color:#7e22ce;
+  margin-bottom:8px;
+  text-align:center;
+}
+
+.register-subtitle{
+  color:#6b7280;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.input-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:20px;
+}
+
+.input-group label{
+  margin-bottom:8px;
+  font-size:14px;
+  font-weight:600;
+  color:#4b5563;
+}
+
+.register-input{
+  padding:14px 16px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:15px;
+  outline:none;
+  transition:.3s;
+}
+
+.register-input:focus{
+  border-color:#7e22ce;
+  box-shadow:0 0 0 4px rgba(126,34,206,.15);
+}
+
+.register-btn{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#7e22ce,#5b21b6);
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.register-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 22px rgba(126,34,206,.25);
+}
+
+.divider{
+  margin:28px 0;
+  text-align:center;
+  position:relative;
+}
+
+.divider::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  left:0;
+  top:50%;
+  border-top:1px solid #e5e7eb;
+}
+
+.divider span{
+  background:white;
+  position:relative;
+  padding:0 18px;
+  color:#9ca3af;
+}
+
+.login-text{
+  text-align:center;
+  color:#6b7280;
+}
+
+.login-link{
+  color:#7e22ce;
+  margin-left:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.login-link:hover{
+  text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.register-page{
+flex-direction:column;
+}
+
+.register-left{
+min-height:340px;
+padding:45px;
+text-align:center;
+}
+
+.brand-logo{
+font-size:46px;
+}
+
+.brand-tagline{
+font-size:24px;
+}
+
+.feature-list{
+align-items:center;
+}
+
+.register-right{
+padding:25px;
+}
+
+.register-card{
+padding:35px;
+}
+
+}

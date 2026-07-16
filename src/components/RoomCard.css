@@ -1,0 +1,39 @@
+.room-card {
+  background: #fafafa;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  margin-bottom: 15px;
+}
+
+.room-card p {
+  margin-bottom: 10px;
+}
+
+.book-room-btn {
+  background: #7e22ce;
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+}
+
+.book-room-btn:disabled {
+  background: gray;
+}
+
+.delete-room-btn {
+  background: #dc2626;
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+}

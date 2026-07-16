@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f3ff;
+}
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ===========================
+   LEFT SIDE
+=========================== */
+
+.login-left {
+  flex: 1.15;
+  background: linear-gradient(135deg, #7e22ce, #5b21b6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-left::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  top: -120px;
+  left: -120px;
+}
+
+.login-left::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -80px;
+}
+
+.brand-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.brand-logo {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.brand-tagline {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.brand-description {
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: .92;
+  margin-bottom: 45px;
+}
+
+.landing feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+}
+
+.feature-icon {
+  width: 34px;
+  height: 34px;
+  background: rgba(255,255,255,.18);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.login-right {
+  flex: 0.85;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  padding: 40px;
+}
+
+.login-card {
+  width: 430px;
+  max-width: 100%;
+  background: white;
+  border-radius: 18px;
+  padding: 45px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.login-title {
+  font-size: 34px;
+  color: #7e22ce;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  color: #6b7280;
+  margin-bottom: 35px;
+  font-size: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.login-input {
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+  outline: none;
+}
+
+.login-input:focus {
+  border-color: #7e22ce;
+  box-shadow: 0 0 0 4px rgba(126,34,206,.15);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#7e22ce,#5b21b6);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(126,34,206,.30);
+}
+
+.divider {
+  margin: 28px 0;
+  text-align: center;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  border-top: 1px solid #e5e7eb;
+}
+
+.divider span {
+  background: white;
+  position: relative;
+  padding: 0 18px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.register-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.register-link {
+  color: #7e22ce;
+  font-weight: 600;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-left {
+    min-height: 340px;
+    padding: 45px;
+    text-align: center;
+  }
+
+  .brand-logo {
+    font-size: 46px;
+  }
+
+  .brand-tagline {
+    font-size: 24px;
+  }
+
+  .brand-description {
+    font-size: 16px;
+  }
+
+  .feature-list {
+    align-items: center;
+  }
+
+  .login-right {
+    padding: 25px;
+  }
+
+  .login-card {
+    padding: 35px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .login-left {
+    padding: 35px 25px;
+  }
+
+  .brand-logo {
+    font-size: 38px;
+  }
+
+  .brand-tagline {
+    font-size: 20px;
+  }
+
+  .login-card {
+    padding: 28px;
+  }
+
+  .login-title {
+    font-size: 28px;
+  }
+
+}

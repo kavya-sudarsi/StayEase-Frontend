@@ -1,0 +1,185 @@
+.owner-bookings-container{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:30px auto;
+
+}
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.table-header h2{
+
+    margin:0;
+
+    color:#374151;
+
+    font-size:28px;
+
+}
+
+.table-header span{
+
+    background:#ede9fe;
+
+    color:#6b21a8;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-weight:600;
+
+}
+
+.booking-table-wrapper{
+
+    background:white;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+}
+
+.booking-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.booking-table th{
+
+    background:#f8f7fc;
+
+    color:#6b7280;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+.booking-table td{
+
+    padding:16px;
+
+    border-top:1px solid #ece8f7;
+
+    font-size:14px;
+
+}
+
+.booking-table tbody tr:hover{
+
+    background:#faf9fd;
+
+}
+
+.status{
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.status-confirmed{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.status-cancelled{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.status-completed{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+.payment{
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.payment-success{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.payment-pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.payment-failed{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.empty-bookings{
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    color:#6b7280;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+
+}

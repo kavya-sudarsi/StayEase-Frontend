@@ -1,0 +1,394 @@
+.navbar{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:14px 38px;
+
+    background:#fff;
+
+    box-shadow:0 4px 20px rgba(0,0,0,.06);
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.navbar-logo{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    cursor:pointer;
+
+}
+
+.logo-circle{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#7e22ce,#5b21b6);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    color:white;
+
+    box-shadow:0 10px 24px rgba(126,34,206,.25);
+
+}
+
+.nav-title{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#6b21a8;
+
+}
+
+.nav-tagline{
+
+    color:#6b7280;
+
+    font-size:13px;
+
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.nav-search{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+
+    padding:0 40px;
+
+}
+
+.nav-search{
+
+    position:relative;
+
+}
+
+.nav-search input{
+
+    width:100%;
+    max-width:430px;
+
+    height:46px;
+
+    border:2px solid #ede9fe;
+
+    border-radius:999px;
+
+    padding:0 52px 0 18px;
+
+    background:#faf7ff;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.nav-search input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+.nav-search input:focus{
+
+    background:white;
+
+    border-color:#7e22ce;
+
+    box-shadow:0 0 0 4px rgba(126,34,206,.12);
+
+}
+
+.search-btn{
+
+    position:absolute;
+
+    right:calc(50% - 215px + 6px);
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:36px;
+    height:36px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#7e22ce,#5b21b6);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:15px;
+
+}
+
+.search-btn:hover{
+
+    transform:translateY(-50%) scale(1.08);
+
+    box-shadow:0 8px 18px rgba(126,34,206,.28);
+
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+.nav-links{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-left:10px;
+
+}
+
+.nav-btn{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f5f3ff;
+
+    color:#6b21a8;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nav-btn:hover{
+
+    background:#ede9fe;
+
+    transform:translateY(-2px);
+
+}
+
+.active-nav{
+
+    color:white;
+
+    background:linear-gradient(135deg,#7e22ce,#5b21b6);
+
+    box-shadow:0 10px 20px rgba(126,34,206,.22);
+
+}
+
+/* ===========================
+   RIGHT
+=========================== */
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-left:20px;
+
+}
+
+.role-badge{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#ede9fe;
+
+    color:#6b21a8;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.logout-btn{
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1200px){
+
+    .nav-search{
+
+        padding:0 20px;
+
+    }
+
+    .nav-search input{
+
+        max-width:320px;
+
+    }
+
+    .search-btn{
+
+        right:18px;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        padding:20px;
+
+    }
+
+    .nav-search{
+
+        width:100%;
+
+        padding:0;
+
+    }
+
+    .nav-search input{
+
+        max-width:none;
+
+    }
+
+    .search-btn{
+
+        right:10px;
+
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .nav-right{
+
+        margin-left:0;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .logo-circle{
+
+        width:46px;
+        height:46px;
+
+        font-size:22px;
+
+    }
+
+    .nav-title{
+
+        font-size:22px;
+
+    }
+
+    .nav-btn{
+
+        padding:10px 16px;
+
+        font-size:14px;
+
+    }
+
+    .logout-btn{
+
+        padding:10px 18px;
+
+    }
+
+}

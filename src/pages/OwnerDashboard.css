@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap");
+
+:root {
+  --ink: #374151;
+  --muted: #6b7280;
+
+  --paper: #F7F5FC;
+  --surface: #FFFFFF;
+
+  --brand: #7e22ce;
+  --brand-dark: #5b21b6;
+  --brand-text: #6b21a8;
+  --brand-tint: #ede9fe;
+  --brand-tint-soft: #f5f3ff;
+
+  --accent: #7e22ce;
+
+  --danger: #C0392B;
+  --danger-tint: #FBEAE8;
+
+  --line: #e3ddf3;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --shadow-card: 0 8px 24px rgba(107, 33, 168, 0.08);
+}
+
+.owner-dashboard-container {
+  width: 92%;
+  max-width: 1450px;
+  margin: 30px auto 60px;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--ink);
+}
+
+/* ==========================
+   STATS STRIP
+========================== */
+
+.owner-stats-strip {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  color: white;
+  padding: 22px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stat-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.add-property-btn {
+  margin-left: auto;
+  border: none;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: white;
+  padding: 14px 26px;
+  border-radius: var(--radius-md);
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-property-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(126, 34, 206, 0.3);
+}
+
+/* ==========================
+   CREATE PROPERTY (collapsible)
+========================== */
+
+.create-property-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 32px;
+  border: 1px solid var(--line);
+}
+
+.create-property-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.create-property-card h2 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.close-form-btn {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.close-form-btn:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.create-property-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.owner-input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  transition: 0.2s;
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.owner-input:focus {
+  border-color: var(--brand);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px var(--brand-tint);
+}
+
+.owner-description {
+  grid-column: 1 / 3;
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* ==========================
+   AMENITIES (create form)
+========================== */
+
+.amenities-section {
+  grid-column: 1 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.amenity-label {
+  background: var(--brand-tint);
+  border-radius: 30px;
+  padding: 9px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--brand-dark);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.amenity-label input {
+  accent-color: var(--brand);
+}
+
+.create-property-btn {
+  grid-column: 1 / 3;
+  border: none;
+  background: var(--brand);
+  color: white;
+  height: 50px;
+  border-radius: var(--radius-md);
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.create-property-btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+}
+
+/* ==========================
+   PROPERTIES SECTION / TABLE
+========================== */
+
+.properties-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.properties-header h2 {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 22px;
+  color: var(--ink);
+}
+
+.properties-header span {
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.properties-table-wrap {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.properties-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.properties-table thead th {
+  text-align: left;
+  font-family: "Sora", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--paper);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.properties-table tbody tr:not(.rooms-row) {
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s;
+}
+
+.properties-table tbody tr:not(.rooms-row):hover {
+  background: var(--paper);
+}
+
+.properties-table tbody tr.is-expanded {
+  background: var(--brand-tint);
+}
+
+.properties-table td {
+  padding: 16px 18px;
+  vertical-align: middle;
+}
+
+.property-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.property-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.type-badge {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gender-tag {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.gender-CO_ED {
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+}
+
+.gender-MALE {
+  background: #E7EEF7;
+  color: #2A5C93;
+}
+
+.gender-FEMALE {
+  background: #FBEAF1;
+  color: #A33465;
+}
+
+.room-count {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+}
+
+.amenity-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 220px;
+}
+
+.amenity-chip {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.muted-text {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.actions-col {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.manage-rooms-btn {
+  border: 1px solid var(--brand);
+  background: var(--surface);
+  color: var(--brand-dark);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.manage-rooms-btn:hover {
+  background: var(--brand-tint);
+}
+
+.delete-btn {
+  border: 1px solid transparent;
+  background: var(--danger-tint);
+  color: var(--danger);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  border-color: var(--danger);
+}
+
+/* ==========================
+   INLINE ROOM MANAGEMENT
+========================== */
+
+.rooms-row td {
+  padding: 0;
+  background: var(--paper);
+}
+
+.rooms-panel {
+  padding: 22px 28px;
+  border-top: 1px dashed var(--line);
+}
+
+.no-rooms-text {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.room-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.room-number {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.room-detail {
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+
+.remove-room-btn {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-room-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.room-input {
+  width: auto;
+  flex: 1;
+  min-width: 130px;
+}
+
+.add-room-btn {
+  border: none;
+  background: var(--brand);
+  color: white;
+  padding: 0 20px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-room-btn:hover {
+  background: var(--brand-dark);
+}
+
+/* ==========================
+   EMPTY / LOADING
+========================== */
+
+.table-loading {
+  background: var(--surface);
+  padding: 40px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.empty-properties-card {
+  background: var(--surface);
+  padding: 60px 40px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px dashed var(--line);
+}
+
+.empty-title {
+  font-family: "Sora", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.empty-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1000px) {
+  .owner-stats-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .add-property-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .create-property-form {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-description,
+  .amenities-section,
+  .create-property-btn {
+    grid-column: auto;
+  }
+
+  .properties-table {
+    font-size: 13px;
+  }
+
+  .add-room-form {
+    flex-direction: column;
+  }
+
+  .room-input {
+    width: 100%;
+  }
+}
+
+.image-upload-section{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+grid-column:1 / 3;
+
+}
+
+.upload-label{
+
+font-weight:600;
+color:#555;
+
+}
+
+.image-preview{
+
+width:220px;
+
+height:150px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
