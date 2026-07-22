@@ -16,6 +16,18 @@ function PropertyDetails() {
 
   const [checkOutDate, setCheckOutDate] = useState("");
 
+  const getMinimumCheckoutDate = (checkIn) => {
+
+  if (!checkIn) return "";
+
+  const date = new Date(checkIn);
+
+  date.setMonth(date.getMonth() + 1);
+
+  return date.toISOString().split("T")[0];
+
+};
+
   useEffect(() => {
     fetchProperty();
   }, []);
@@ -327,10 +339,13 @@ function PropertyDetails() {
                     .toISOString()
                     .split("T")[0]
                 }
+                onChange={(e) => {
 
-                onChange={(e) =>
-                  setCheckInDate(e.target.value)
-                }
+                    setCheckInDate(e.target.value);
+
+                    setCheckOutDate("");
+
+                  }}
 
               />
 
@@ -345,13 +360,13 @@ function PropertyDetails() {
                 type="date"
 
                 value={checkOutDate}
-
-                min={
-                  checkInDate ||
-                  new Date()
-                    .toISOString()
-                    .split("T")[0]
-                }
+              min={
+                checkInDate
+                  ? getMinimumCheckoutDate(checkInDate)
+                  : new Date()
+                      .toISOString()
+                      .split("T")[0]
+              }
 
                 onChange={(e) =>
                   setCheckOutDate(e.target.value)
